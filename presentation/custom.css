@@ -1,0 +1,16 @@
+@font-face {
+    font-family: Milkshake;
+    src: url("Milkshake.otf") format("opentype");
+}
+
+ul.dashed {
+    list-style-type: none;
+}
+ul.dashed > li {
+    text-indent: -25px;
+}
+ul.dashed > li:before {
+    content: "–";
+    text-indent: -25px;
+}
+
