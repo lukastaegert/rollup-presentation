@@ -1,5 +1,5 @@
 const upperCaseLetterAt = (position, str) =>
-  str[position] = str[position].toUpperCase()
+  str.slice(0, position) + str[position].toUpperCase() + str.slice(position + 1)
 
 export const makeFirstLetterUpperCase = str =>
   upperCaseLetterAt(0, str)
