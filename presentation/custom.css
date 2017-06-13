@@ -6,11 +6,25 @@
 ul.dashed {
     list-style-type: none;
 }
+
 ul.dashed > li {
-    text-indent: -25px;
-}
-ul.dashed > li:before {
-    content: "–";
-    text-indent: -25px;
+    text-indent: -27px;
 }
 
+ul.dashed > li:before {
+    content: "–";
+    text-indent: -27px;
+}
+
+ul.spaced {
+    margin-top: 0.8em;
+}
+
+ul.spaced > li {
+    margin-bottom: 0.8em;
+}
+
+span.inline-code {
+    font-family: 'Fira Code', monospace;
+    font-weight: 900;
+}

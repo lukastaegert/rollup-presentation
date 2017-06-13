@@ -35,29 +35,30 @@
 
     <section>
         <section>
-            <h3>
+            <div style="font: 50px 'News Cycle';">
                 So you have written a
-            </h3>
-            <h1 class="fragment fade-in"
+            </div>
+            <div class="fragment fade-in"
                     data-fragment-index="0"
-                    style="margin-top:-40px;">
+                    style="margin-top:-70px;font: 130px 'News Cycle';">
                 great<span class="fragment fade-in"
                     data-fragment-index="1"
                     style="vertical-align: super">*</span>
-            </h1>
-            <h2 class="fragment fade-out"
+            </div>
+            <div class="fragment fade-out"
                     data-fragment-index="0"
-                    style="margin-top:-150px;margin-bottom: 100px;">
+                    style="margin-top:-130px;margin-bottom: 50px;font: 80px 'News Cycle';line-height: 100px;">
                 good
-            </h2>
-            <h3>
+            </div>
+            <div style="font: 50px 'News Cycle';">
                 npm library.
-            </h3>
+            </div>
         </section>
+
         <section>
-            <div style="position: relative">
-                <div style="text-align: left;display: inline-block">
-                    <div style="font-family: Milkshake,serif;font-weight: 100;text-align: left;position: absolute;left: 190px;">
+            <div>
+                <div style="text-align: left;display: inline-block;position: relative">
+                    <div style="font-family: Milkshake,serif;font-weight: 100;text-align: left;position: absolute;left: 160px;">
                         Dictionary of
                     </div>
                     <div style="font-family:Milkshake;font-size: 150px;font-weight: 100;text-align: left">
@@ -77,25 +78,147 @@
                     </div>
                     <ul class="dashed" style="font-family: Times,serif;list-style-type: none">
                         <li class="no-burn">
-                           is super easy to use!
+                            is super easy to use!
                         </li>
                         <li class="no-burn">
-                           provides its API through static functions or a factory function
+                            provides its API through static functions or a factory function
                         </li>
                         <li class="no-burn">
-                           puts optional parameters into configuration objects
+                            puts optional parameters into configuration objects
                         </li>
                         <li class="no-burn">
-                           uses reasonable defaults, but only where it makes sense
+                            uses reasonable defaults, but only where it makes sense
                         </li>
                         <li class="no-burn">
-                           gracefully handles user errors,<br>strictly handles programming
+                            gracefully handles user errors,<br>strictly handles programming
                             errors
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
+    </section>
+
+    <section>
+        <div style="font: 50px 'News Cycle';">
+            How can you make your library
+        </div>
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            work
+        </div>
+        <div style="font: 50px 'News Cycle';">
+            well for all your users?
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;">
+                <h2 style="font-family: Milkshake">What users want...</h2>
+                <h3 class="fragment no-burn" style="margin-bottom: 20px;">Node Server Developer</h3>
+                <ul class="dashed">
+                    <li class="no-burn">
+                        No
+                        <a href="https://medium.com/friendship-dot-js/i-peeked-into-my-node-modules-directory-and-you-wont-believe-what-happened-next-b89f63d21558">Guy
+                            Fieri</a> in your node_modules
+                    </li>
+                </ul>
+                <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">Node CLI
+                    Utility Creator</h3>
+                <ul class="dashed">
+                    <li class="no-burn">
+                        Super quick startup time
+                    </li>
+                </ul>
+                <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">Frontend
+                    Developer</h3>
+                <ul class="dashed">
+                    <li class="no-burn">
+                        Runs mostly anywhere&trade;
+                    </li>
+                    <li class="no-burn">
+                        <span class="fragment highlight-blue">Uses statically analyzable ES6 exports</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;">
+                <h3 style="margin-bottom: 10px">ES6 modules<br>from a user's perspective</h3>
+                <ul class="dashed spaced">
+                    <li>
+                        <span class='inline-code'
+                                style="padding-right: 20px;">import {x} from 'y'</span>
+                        instead of<br>
+                        <span class='inline-code'>x = require('y').x</span>
+                    </li>
+                    <li>
+                        <span class='inline-code' style="padding-right: 20px;">export const x = 'foo'</span>
+                        instead of<br>
+                        <span class='inline-code'>exports.x = 'foo'</span>
+                    </li>
+                    <li>
+                        <span class='inline-code' style="padding-right: 10px;">import</span>
+                        and
+                        <span class='inline-code' style="padding-left: 10px;padding-right: 10px;">export</span>
+                        only allowed at the top level
+                    </li>
+                    <li>
+                        <span class='inline-code'
+                                style="padding-right: 10px;">import ... from</span>
+                        does not allow dynamic module names
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;">
+                <h3 style="margin-bottom: 10px">ES6 modules<br>from a module bundler's perspective
+                </h3>
+                <ul class="dashed spaced">
+                    <li>
+                        Can identify mis-spelled imports
+                    </li>
+                    <li>
+                        Can identify unused modules without executing code
+                    </li>
+                    <li>
+                        Can remove code for unused exports a.k.a. tree-shaking
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        How do you publish a library that features ES6 exports but also works well in a node environment?
+    </section>
+
+    <section>
+        package.json stuff with highlighting
+    </section>
+
+    <section>
+        How is this possible without writing your code twice?
+        You need a module bundler
+    </section>
+
+    <section>
+        Enter Rollup
+    </section>
+
+    <section>
+        Basic compile process
+    </section>
+
+    <section>
+        Demo
     </section>
 
     <section>
