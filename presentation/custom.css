@@ -20,12 +20,18 @@ ul.spaced {
     margin-top: 0.8em;
 }
 
-ul.headlines {
-    font: 50px 'News Cycle'
+ul.spaced > li {
+    margin-top: 25px;
 }
 
-ul.spaced > li {
-    margin-bottom: 0.8em;
+ul.headlines {
+    font: 50px 'News Cycle';
+    line-height:1;
+    list-style: none;
+}
+
+ul.headlines > li {
+    margin-top: 25px;
 }
 
 span.inline-code {
@@ -36,4 +42,9 @@ span.inline-code {
 .white-on-black {
     color: white;
     text-shadow: 1px 1px 7px black;
+}
+
+.black-on-white {
+    color: black;
+    text-shadow: 1px 1px 7px white;
 }

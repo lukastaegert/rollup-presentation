@@ -17,7 +17,7 @@
     <script src="node_modules/tng-reveal-template/src/client/presentation.js"></script>
 </head>
 
-<body class="charred auto-fragment">
+<body class="auto-fragment reveal">
 
     <div class="i18n">
         <span class="section-overview">Overview</span>
@@ -34,41 +34,61 @@
     </section>
 
     <section>
-        <div style="font: 50px 'News Cycle';">
-            So you have written a
-        </div>
-        <div style="margin-top:10px;margin-bottom: 30px;font: 80px 'News Cycle';">
-            good
-        </div>
-        <div style="font: 50px 'News Cycle';">
-            npm library.
-        </div>
-    </section>
-
-    <section>
-        <section data-background-image="img/kermit.gif" class="white-on-black">
-            <div style="font: 100px Milkshake">
+        <section id="section-kermit">
+            <div style="font: 75px Milkshake">
                 And so it happened…
             </div>
-            <div style="font: 50px 'News Cycle';">
-                …you have written a
-            </div>
-            <div class="fragment fade-in"
-                    data-fragment-index="0"
-                    style="margin-top:-60px;font: 130px 'News Cycle';">
-                great<span class="fragment fade-in"
-                    data-fragment-index="1"
-                    style="vertical-align: super">*</span>
-            </div>
-            <div class="fragment fade-out"
-                    data-fragment-index="0"
-                    style="margin-top:-140px;margin-bottom: 60px;font: 80px 'News Cycle';">
-                good
-            </div>
-            <div style="font: 50px 'News Cycle';">
-                npm library.
+            <div class="fragment" data-fragment-index="0" id="show-kermit">
+                <div style="font: 50px 'News Cycle';">
+                    …you have written a
+                </div>
+                <div class="fragment fade-in"
+                        data-fragment-index="1"
+                        style="margin-top:-60px;font: 130px 'News Cycle';">
+                    great<span class="fragment fade-in"
+                        data-fragment-index="2"
+                        style="vertical-align: super">*</span>
+                </div>
+                <div class="fragment fade-out"
+                        data-fragment-index="1"
+                        style="margin-top:-140px;margin-bottom: 60px;font: 80px 'News Cycle';">
+                    good
+                </div>
+                <div style="font: 50px 'News Cycle';">
+                    npm library.
+                </div>
             </div>
         </section>
+        <script>
+          Reveal.addEventListener('fragmentshown', function (event) {
+            if (event.fragment.id === 'show-kermit') {
+              var section = document.getElementById('section-kermit')
+              section.setAttribute('data-background-image', 'img/kermit.gif')
+              section.setAttribute(
+                'class',
+                section.getAttribute('class')
+                  .split(' ')
+                  .concat('white-on-black')
+                  .join(' ')
+              )
+              Reveal.sync()
+            }
+          })
+          Reveal.addEventListener('fragmenthidden', function (event) {
+            if (event.fragment.id === 'show-kermit') {
+              var section = document.getElementById('section-kermit')
+              section.removeAttribute('data-background-image')
+              section.setAttribute(
+                'class',
+                section.getAttribute('class')
+                  .split(' ')
+                  .filter(function (className) {return className !== 'white-on-black'})
+                  .join(' ')
+              )
+              Reveal.sync()
+            }
+          })
+        </script>
 
         <section>
             <div>
@@ -79,11 +99,11 @@
                     <div style="font-family:Milkshake;font-size: 150px;font-weight: 100;text-align: left">
                         *Greatness
                     </div>
-                    <p class="fragment no-burn" data-fragment-index="0">
+                    <p class="fragment" data-fragment-index="0">
                         <a href="https://www.youtube.com/watch?v=RdKT70ktaeo">Maggie Pint @ JSConf
                             EU 2017:</a>
                     </p>
-                    <div class="fragment no-burn"
+                    <div class="fragment"
                             data-fragment-index="0"
                             style="font-family: Times,serif;font-weight: 100;">
                         <span style="font-weight: 900;">
@@ -92,19 +112,19 @@
                         /greit ˈlaibr&#601;ri/: A library that
                     </div>
                     <ul class="dashed" style="font-family: Times,serif;list-style-type: none">
-                        <li class="no-burn">
-                            is super easy to use!
+                        <li>
+                            is super easy to use
                         </li>
-                        <li class="no-burn">
+                        <li>
                             provides its API through static functions or a factory function
                         </li>
-                        <li class="no-burn">
+                        <li>
                             puts optional parameters into configuration objects
                         </li>
-                        <li class="no-burn">
+                        <li>
                             uses reasonable defaults, but only where it makes sense
                         </li>
-                        <li class="no-burn">
+                        <li>
                             gracefully handles user errors,<br>strictly handles programming
                             errors
                         </li>
@@ -115,11 +135,14 @@
     </section>
 
     <section>
+        <div style="font: 75px Milkshake">
+            …and then you wonder
+        </div>
         <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
-            Who
+            &ldquo;Who
         </div>
         <div style="font: 50px 'News Cycle';">
-            might be going to use your library? <span class="fragment no-burn"
+            might be using this library?&rdquo; <span class="fragment no-burn"
                 data-fragment-index="0">E.g.</span>
         </div>
         <ul class="headlines fragment no-burn" data-fragment-index="0">
@@ -131,21 +154,26 @@
     </section>
 
     <section>
-        <div style="font: 50px 'News Cycle';">
+        <div style="font: 75px Milkshake">
+            The question is:
+        </div>
+        <div style="font: 50px 'News Cycle';" class="fragment" data-fragment-index="0">
             How can you make your library
         </div>
-        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';"
+                class="fragment"
+                data-fragment-index="0">
             work
         </div>
-        <div style="font: 50px 'News Cycle';">
-            well for all your users?
+        <div style="font: 50px 'News Cycle';" class="fragment" data-fragment-index="0">
+            well for all these users?
         </div>
     </section>
 
     <section>
         <div>
             <div style="text-align: left;display: inline-block;">
-                <h2 style="font-family: Milkshake">What users want…</h2>
+                <div style="font:75px Milkshake;margin-bottom:10px;">What users want…</div>
                 <h3 class="fragment no-burn" style="margin-bottom: 20px;">Node Server Developer</h3>
                 <ul class="dashed">
                     <li class="no-burn">
@@ -158,7 +186,7 @@
                     Utility Creator</h3>
                 <ul class="dashed">
                     <li class="no-burn">
-                        Quick startup time
+                        Quick to parse
                     </li>
                 </ul>
                 <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">Frontend
@@ -183,14 +211,17 @@
             want
         </div>
         <div style="font: 50px 'News Cycle';">
-            this?
+            that?
         </div>
     </section>
 
     <section>
         <div>
             <div style="text-align: left;display: inline-block;">
-                <h3 style="margin-bottom: 10px">ES6 modules<br>from a user's perspective</h3>
+                <h3 style="margin-bottom:-10px">
+                    ES6 modules<br>
+                    from a user's perspective
+                </h3>
                 <ul class="dashed spaced">
                     <li>
                         <span class='inline-code' style="padding-right: 20px;">export const x = 'foo'</span>
@@ -222,14 +253,17 @@
     <section>
         <div>
             <div style="text-align: left;display: inline-block;">
-                <h3 style="margin-bottom: 10px">ES6 modules<br>from a module bundler's perspective
+                <h3 style="margin-bottom:-10px">
+                    ES6 modules<br>
+                    from a module bundler's perspective
                 </h3>
                 <ul class="dashed spaced">
                     <li>
                         Can identify unused modules without executing code
                     </li>
                     <li>
-                        Can remove code for unused exports <span class="fragment">a.k.a.<br><span style="font: 80px Milkshake;">tree-shaking</span></span>
+                        Can remove code for unused exports <span class="fragment">a.k.a.<br>
+                        <span style="font:75px Milkshake;line-height:1;">tree-shaking</span></span>
                     </li>
                 </ul>
             </div>
@@ -253,21 +287,23 @@
 
     <section>
         <div>
-            <div style="text-align: left;display: inline-block;">
-                <h3 style="font-family: Milkshake;margin-left: 5%;margin-right: 5%">How to make ES6
-                    exports work…</h3>
+            <div style="text-align: left;display: inline-block;width: 90%;">
+                <div style="font:60px Milkshake;margin-left:5%;margin-right:5%">
+                    How to make ES6 exports work…
+                </div>
                 <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
                     package.json:
                 </div>
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
   // ...
-  "main": "dist/index.js", // Common JS version
+  "main": "dist/index.js", // CommonJS version
   "module": "dist/index.mjs", // ES6 version
-  // ...
+  // ..
 }</code></pre>
-                <div class="fragment" style="margin-left:5%"><span class='inline-code'
-                        style="padding-right: 20px;">"module"</span>
-                    is automatically used<br>by the major ES6 bundlers
+                <div class="fragment" style="margin-left:5%;margin-top: 50px;">
+                    <span class='inline-code' style="padding-right: 20px;">
+                        "module"
+                    </span>is automatically recognized<br>by the major ES6 bundlers
                 </div>
             </div>
         </div>
@@ -275,27 +311,62 @@
 
     <section data-background-image="img/cry.gif" class="white-on-black">
         <div style="font: 50px 'News Cycle';">
-            "But I don't want to write my libary
+            &ldquo;But I don't want to write my libary
         </div>
         <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
-            twice"
+            twice&rdquo;
         </div>
         <div style="font: 50px 'News Cycle';" class="fragment">
-            …and you don't have to:
+            …and you don't have to:<br>Just write the ES6 version and use…
         </div>
     </section>
 
     <section>
-        <img src="img/rollup.svg" style="width: 300px;box-shadow: none;margin:-50px;vertical-align: middle">
+        <img src="img/rollup.svg"
+                style="width: 300px;box-shadow: none;margin:-50px;vertical-align: middle">
         <span style="font: 130px 'News Cycle';vertical-align: middle">rollup.js</span>
+        <ul class="headlines">
+            <li>Bundles ES6 modules into a single file</li>
+            <li>Supports various output formats: ES6,<br>CommonJS, AMD, global variable…</li>
+            <li>Optimizes output via<br><span style="font-weight: 900;margin-right:10px;">scope-hoisting</span>
+                and <span style="font-weight:900;margin-left:10px;">tree-shaking</span></li>
+        </ul>
     </section>
 
     <section>
-        Basic compile process
+        <div>
+            <div style="text-align: left;display: inline-block;width: 60%;">
+                <div style="font:75px Milkshake;margin-left:5%;margin-right:5%">
+                    Basic setup
+                </div>
+                <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
+                    build.js:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="0"><code class="javascript">require('rollup')
+  .rollup({entry: 'src/index.js'})
+  .then(bundle => {
+    bundle.write({
+      dest: 'dist/index.js',
+      format: 'cjs' // CommonJS module
+    })
+    bundle.write({
+      dest: 'dist/index.mjs',
+      format: 'es' // ES6 module
+    })
+  })
+</code></pre>
+                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                    Then create the bundles with
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="1"><code class="bash">$ node build.js</code></pre>
+            </div>
+        </div>
     </section>
 
-    <section>
-        Demo
+    <section data-background-image="img/demo.gif" class="white-on-black">
+        <div style="font:150px Milkshake;">
+            Demo
+        </div>
     </section>
 
     <section>
