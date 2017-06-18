@@ -27,11 +27,17 @@ ul.spaced > li {
 ul.headlines {
     font: 50px 'News Cycle';
     line-height:1;
-    list-style: none;
+    list-style-type: none;
 }
 
 ul.headlines > li {
     margin-top: 25px;
+    text-indent: -37px;
+}
+
+ul.headlines > li:before {
+    content: "– ";
+    text-indent: -37px;
 }
 
 span.inline-code {

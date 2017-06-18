@@ -370,6 +370,83 @@
     </section>
 
     <section>
+        <div>
+            <div style="text-align: left;display: inline-block;width: 60%;">
+                <div style="font:60px Milkshake;margin-left:5%;margin-right:5%">
+                    External dependencies
+                </div>
+                <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
+                    package.json:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
+  // ...
+  "dependencies": {"lodash": "*"}
+  // ..
+}</code></pre>
+                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                    build.js:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
+  .rollup({
+    entry: 'src/index.js',
+    external: ['lodash']
+  })
+  .then(bundle => {/* ... */})
+</code></pre>
+                <div class="fragment" style="margin-left:5%;margin-top: 30px;">
+                    Usually the best way to handle dependencies.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;width: 60%;">
+                <div style="font:60px Milkshake;margin-left:5%;margin-right:5%">
+                    Bundled dependencies
+                </div>
+                <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
+                    package.json:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
+  // ...
+  "devDependencies": {
+    "lodash-es": "*",
+    "rollup": "*",
+    "rollup-plugin-node-resolve": "*"
+  }
+  // ..
+}</code></pre>
+                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                    build.js:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
+  .rollup({
+    entry: 'src/index.js',
+    plugins: [
+      require('rollup-plugin-node-resolve')()
+    ]
+  })
+  .then(bundle => {/* ... */})
+</code></pre>
+                <div class="fragment" style="margin-left:5%;margin-top: 30px;">
+                    When using only little from a library.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-background-image="img/demo.gif" class="white-on-black">
+        <div style="font: 50px 'News Cycle';">
+            Back to the
+        </div>
+        <div style="font:150px Milkshake;">
+            Demo
+        </div>
+    </section>
+
+    <section>
         <h1>Thank you</h1>
 
         <p>
