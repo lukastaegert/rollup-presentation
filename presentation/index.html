@@ -34,20 +34,35 @@
     </section>
 
     <section>
-        <section>
+        <div style="font: 50px 'News Cycle';">
+            So you have written a
+        </div>
+        <div style="margin-top:10px;margin-bottom: 30px;font: 80px 'News Cycle';">
+            good
+        </div>
+        <div style="font: 50px 'News Cycle';">
+            npm library.
+        </div>
+    </section>
+
+    <section>
+        <section data-background-image="img/kermit.gif" class="white-on-black">
+            <div style="font: 100px Milkshake">
+                And so it happened…
+            </div>
             <div style="font: 50px 'News Cycle';">
-                So you have written a
+                …you have written a
             </div>
             <div class="fragment fade-in"
                     data-fragment-index="0"
-                    style="margin-top:-70px;font: 130px 'News Cycle';">
+                    style="margin-top:-60px;font: 130px 'News Cycle';">
                 great<span class="fragment fade-in"
                     data-fragment-index="1"
                     style="vertical-align: super">*</span>
             </div>
             <div class="fragment fade-out"
                     data-fragment-index="0"
-                    style="margin-top:-130px;margin-bottom: 50px;font: 80px 'News Cycle';line-height: 100px;">
+                    style="margin-top:-140px;margin-bottom: 60px;font: 80px 'News Cycle';">
                 good
             </div>
             <div style="font: 50px 'News Cycle';">
@@ -100,6 +115,22 @@
     </section>
 
     <section>
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            Who
+        </div>
+        <div style="font: 50px 'News Cycle';">
+            might be going to use your library? <span class="fragment no-burn"
+                data-fragment-index="0">E.g.</span>
+        </div>
+        <ul class="headlines fragment no-burn" data-fragment-index="0">
+            <li>Node Server Developers</li>
+            <li>Node CLI Utility Creators</li>
+            <li>Frontend Developers</li>
+            <li>etc.</li>
+        </ul>
+    </section>
+
+    <section>
         <div style="font: 50px 'News Cycle';">
             How can you make your library
         </div>
@@ -114,7 +145,7 @@
     <section>
         <div>
             <div style="text-align: left;display: inline-block;">
-                <h2 style="font-family: Milkshake">What users want...</h2>
+                <h2 style="font-family: Milkshake">What users want…</h2>
                 <h3 class="fragment no-burn" style="margin-bottom: 20px;">Node Server Developer</h3>
                 <ul class="dashed">
                     <li class="no-burn">
@@ -127,7 +158,7 @@
                     Utility Creator</h3>
                 <ul class="dashed">
                     <li class="no-burn">
-                        Super quick startup time
+                        Quick startup time
                     </li>
                 </ul>
                 <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">Frontend
@@ -137,10 +168,22 @@
                         Runs mostly anywhere&trade;
                     </li>
                     <li class="no-burn">
-                        <span class="fragment highlight-blue">Uses statically analyzable ES6 exports</span>
+                        <span class="fragment highlight-blue">Provides statically analyzable ES6 exports</span>
                     </li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <section data-background-image="img/why.gif" class="white-on-black">
+        <div style="font: 50px 'News Cycle';">
+            Why would they
+        </div>
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            want
+        </div>
+        <div style="font: 50px 'News Cycle';">
+            this?
         </div>
     </section>
 
@@ -150,15 +193,15 @@
                 <h3 style="margin-bottom: 10px">ES6 modules<br>from a user's perspective</h3>
                 <ul class="dashed spaced">
                     <li>
+                        <span class='inline-code' style="padding-right: 20px;">export const x = 'foo'</span>
+                        instead of<br>
+                        <span class='inline-code'>exports.x = 'foo'</span>
+                    </li>
+                    <li>
                         <span class='inline-code'
                                 style="padding-right: 20px;">import {x} from 'y'</span>
                         instead of<br>
                         <span class='inline-code'>x = require('y').x</span>
-                    </li>
-                    <li>
-                        <span class='inline-code' style="padding-right: 20px;">export const x = 'foo'</span>
-                        instead of<br>
-                        <span class='inline-code'>exports.x = 'foo'</span>
                     </li>
                     <li>
                         <span class='inline-code' style="padding-right: 10px;">import</span>
@@ -183,34 +226,68 @@
                 </h3>
                 <ul class="dashed spaced">
                     <li>
-                        Can identify mis-spelled imports
-                    </li>
-                    <li>
                         Can identify unused modules without executing code
                     </li>
                     <li>
-                        Can remove code for unused exports a.k.a. tree-shaking
+                        Can remove code for unused exports <span class="fragment">a.k.a.<br><span style="font: 80px Milkshake;">tree-shaking</span></span>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section>
-        How do you publish a library that features ES6 exports but also works well in a node environment?
+    <section data-background-image="img/make-it-work.gif" class="white-on-black">
+        <div style="font: 50px 'News Cycle';">
+            But wouldn't this
+        </div>
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            break
+        </div>
+        <div style="font: 50px 'News Cycle';">
+            my library for anyone who doesn't use ES6 imports?
+        </div>
+        <div style="font: 100px Milkshake" class="fragment">
+            …yes.
+        </div>
     </section>
 
     <section>
-        package.json stuff with highlighting
+        <div>
+            <div style="text-align: left;display: inline-block;">
+                <h3 style="font-family: Milkshake;margin-left: 5%;margin-right: 5%">How to make ES6
+                    exports work…</h3>
+                <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
+                    package.json:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
+  // ...
+  "main": "dist/index.js", // Common JS version
+  "module": "dist/index.mjs", // ES6 version
+  // ...
+}</code></pre>
+                <div class="fragment" style="margin-left:5%"><span class='inline-code'
+                        style="padding-right: 20px;">"module"</span>
+                    is automatically used<br>by the major ES6 bundlers
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-background-image="img/cry.gif" class="white-on-black">
+        <div style="font: 50px 'News Cycle';">
+            "But I don't want to write my libary
+        </div>
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            twice"
+        </div>
+        <div style="font: 50px 'News Cycle';" class="fragment">
+            …and you don't have to:
+        </div>
     </section>
 
     <section>
-        How is this possible without writing your code twice?
-        You need a module bundler
-    </section>
-
-    <section>
-        Enter Rollup
+        <img src="img/rollup.svg" style="width: 300px;box-shadow: none;margin:-50px;vertical-align: middle">
+        <span style="font: 130px 'News Cycle';vertical-align: middle">rollup.js</span>
     </section>
 
     <section>

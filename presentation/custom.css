@@ -12,12 +12,16 @@ ul.dashed > li {
 }
 
 ul.dashed > li:before {
-    content: "–";
+    content: "– ";
     text-indent: -27px;
 }
 
 ul.spaced {
     margin-top: 0.8em;
+}
+
+ul.headlines {
+    font: 50px 'News Cycle'
 }
 
 ul.spaced > li {
@@ -27,4 +31,9 @@ ul.spaced > li {
 span.inline-code {
     font-family: 'Fira Code', monospace;
     font-weight: 900;
+}
+
+.white-on-black {
+    color: white;
+    text-shadow: 1px 1px 7px black;
 }
