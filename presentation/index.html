@@ -470,12 +470,11 @@
                         <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">String.prototype.myConst = '42'</code></pre>
                     </li>
                     <li>
-                        Calling a global function<br>
-                        (because it could have been tampered with):
-                        <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">const keys = Object.keys({x: 1})</code></pre>
+                        Calling most global functions:
+                        <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">const keys = Object.freeze({x: 1})</code></pre>
                     </li>
                     <li>
-                        Implicitly calling a global function:
+                        Implicitly calling most global functions:
                         <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">'4'.concat('2') // = String.prototype.concat.call('4', '2')</code></pre>
                     </li>
                 </ul>
