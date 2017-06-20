@@ -33,117 +33,79 @@
         <a href="http://www.tngtech.com"><img class="logo" src="img/tng.svg"></a>
     </section>
 
-    <section>
-        <section id="section-kermit">
-            <div style="font: 75px Milkshake">
-                And so it happened…
-            </div>
-            <div class="fragment" data-fragment-index="0" id="show-kermit">
-                <div style="font: 50px 'News Cycle';">
-                    …you have written a
-                </div>
-                <div class="fragment fade-in"
-                        data-fragment-index="1"
-                        style="margin-top:-60px;font: 130px 'News Cycle';">
-                    great<span class="fragment fade-in"
-                        data-fragment-index="2"
-                        style="vertical-align: super">*</span>
-                </div>
-                <div class="fragment fade-out"
-                        data-fragment-index="1"
-                        style="margin-top:-140px;margin-bottom: 60px;font: 80px 'News Cycle';">
-                    good
-                </div>
-                <div style="font: 50px 'News Cycle';">
-                    npm library.
-                </div>
-            </div>
-        </section>
-        <script>
-          Reveal.addEventListener('fragmentshown', function (event) {
-            if (event.fragment.id === 'show-kermit') {
-              var section = document.getElementById('section-kermit')
-              section.setAttribute('data-background-image', 'img/kermit.gif')
-              section.setAttribute(
-                'class',
-                section.getAttribute('class')
-                  .split(' ')
-                  .concat('white-on-black')
-                  .join(' ')
-              )
-              Reveal.sync()
-            }
-          })
-          Reveal.addEventListener('fragmenthidden', function (event) {
-            if (event.fragment.id === 'show-kermit') {
-              var section = document.getElementById('section-kermit')
-              section.removeAttribute('data-background-image')
-              section.setAttribute(
-                'class',
-                section.getAttribute('class')
-                  .split(' ')
-                  .filter(function (className) {return className !== 'white-on-black'})
-                  .join(' ')
-              )
-              Reveal.sync()
-            }
-          })
-        </script>
-
-        <section>
-            <div>
-                <div style="text-align: left;display: inline-block;position: relative">
-                    <div style="font-family: Milkshake,serif;font-weight: 100;text-align: left;position: absolute;left: 160px;">
-                        Dictionary of
-                    </div>
-                    <div style="font-family:Milkshake;font-size: 150px;font-weight: 100;text-align: left">
-                        *Greatness
-                    </div>
-                    <p class="fragment" data-fragment-index="0">
-                        <a href="https://www.youtube.com/watch?v=RdKT70ktaeo">Maggie Pint @ JSConf
-                            EU 2017:</a>
-                    </p>
-                    <div class="fragment"
-                            data-fragment-index="0"
-                            style="font-family: Times,serif;font-weight: 100;">
-                        <span style="font-weight: 900;">
-                            great library
-                        </span>
-                        /greit ˈlaibr&#601;ri/: A library that
-                    </div>
-                    <ul class="dashed" style="font-family: Times,serif;list-style-type: none">
-                        <li>
-                            is super easy to use
-                        </li>
-                        <li>
-                            provides its API through static functions or a factory function
-                        </li>
-                        <li>
-                            puts optional parameters into configuration objects
-                        </li>
-                        <li>
-                            uses reasonable defaults, but only where it makes sense
-                        </li>
-                        <li>
-                            gracefully handles user errors,<br>strictly handles programming
-                            errors
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </section>
-
-    <section>
+    <section id="section-kermit">
         <div style="font: 75px Milkshake">
-            …and then you wonder
+            And so it happened…
+        </div>
+        <div class="fragment" data-fragment-index="0" id="show-kermit">
+            <div style="font: 50px 'News Cycle';">
+                …you have written a
+            </div>
+            <div class="fragment fade-in"
+                    data-fragment-index="1"
+                    style="margin-top:-70px;font: 130px 'News Cycle';">
+                great<span class="fragment fade-in"
+                    data-fragment-index="2"
+                    style="vertical-align: super">*</span>
+            </div>
+            <div class="fragment fade-out"
+                    data-fragment-index="1"
+                    style="margin-top:-160px;margin-bottom: 40px;font: 80px 'News Cycle';">
+                good
+            </div>
+            <div style="font: 50px 'News Cycle';">
+                npm library.
+            </div>
+        </div>
+        <div style="margin-top: 50px;" class="fragment" data-fragment-index="2">
+            *Check out
+        </div>
+        <a href="https://www.youtube.com/watch?v=RdKT70ktaeo"
+                class="fragment"
+                data-fragment-index="2"
+                style="color:white;text-decoration: underline;">Maggie Pint @ JSConf EU 2017</a>
+    </section>
+    <script>
+      Reveal.addEventListener('fragmentshown', function (event) {
+        if (event.fragment.id === 'show-kermit') {
+          var section = document.getElementById('section-kermit')
+          section.setAttribute('data-background-image', 'img/kermit.gif')
+          section.setAttribute(
+            'class',
+            section.getAttribute('class')
+              .split(' ')
+              .concat('white-on-black')
+              .join(' ')
+          )
+          Reveal.sync()
+        }
+      })
+      Reveal.addEventListener('fragmenthidden', function (event) {
+        if (event.fragment.id === 'show-kermit') {
+          var section = document.getElementById('section-kermit')
+          section.removeAttribute('data-background-image')
+          section.setAttribute(
+            'class',
+            section.getAttribute('class')
+              .split(' ')
+              .filter(function (className) {return className !== 'white-on-black'})
+              .join(' ')
+          )
+          Reveal.sync()
+        }
+      })
+    </script>
+
+    <section>
+        <div style="font: 50px 'News Cycle';">
+            Did you wonder
         </div>
         <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
-            &ldquo;Who
+            who
         </div>
         <div style="font: 50px 'News Cycle';">
-            might be using this library?&rdquo; <span class="fragment no-burn"
-                data-fragment-index="0">E.g.</span>
+            might be using your library?
+            <span class="fragment no-burn" data-fragment-index="0">E.g.</span>
         </div>
         <ul class="headlines fragment no-burn" data-fragment-index="0">
             <li>Node Server Developers</li>
@@ -174,28 +136,24 @@
         <div>
             <div style="text-align: left;display: inline-block;">
                 <div style="font:75px Milkshake;margin-bottom:10px;">What users want…</div>
-                <h3 class="fragment no-burn" style="margin-bottom: 20px;">Node Server Developer</h3>
+                <h3 class="fragment no-burn" style="margin-bottom: 20px;">
+                    Node Server Developer
+                </h3>
                 <ul class="dashed">
-                    <li class="no-burn">
-                        No
-                        <a href="https://medium.com/friendship-dot-js/i-peeked-into-my-node-modules-directory-and-you-wont-believe-what-happened-next-b89f63d21558">Guy
-                            Fieri</a> in your node_modules
-                    </li>
+                    <li>No useless stuff in their node_modules</li>
                 </ul>
-                <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">Node CLI
-                    Utility Creator</h3>
+                <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">
+                    Node CLI Utility Creator
+                </h3>
                 <ul class="dashed">
-                    <li class="no-burn">
-                        Quick to parse
-                    </li>
+                    <li>Quick to parse</li>
                 </ul>
-                <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">Frontend
-                    Developer</h3>
+                <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">
+                    Frontend Developer
+                </h3>
                 <ul class="dashed">
-                    <li class="no-burn">
-                        Runs mostly anywhere&trade;
-                    </li>
-                    <li class="no-burn">
+                    <li>Runs mostly anywhere&trade;</li>
+                    <li>
                         <span class="fragment highlight-blue">Provides statically analyzable ES6 exports</span>
                     </li>
                 </ul>
@@ -443,6 +401,264 @@
         </div>
         <div style="font:150px Milkshake;">
             Demo
+        </div>
+    </section>
+
+    <section>
+        <div style="font: 50px 'News Cycle';">
+            But should not tree-shaking
+        </div>
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            remove
+        </div>
+        <div style="font: 50px 'News Cycle';">
+            all unused imports?
+        </div>
+    </section>
+
+    <section data-background-image="img/tree-shake.gif" class="white-on-black">
+        <div style="font: 50px 'News Cycle';">
+            When tree-shaking
+        </div>
+        <div style="margin-top:-20px;font:150px Milkshake;">
+            goes wrong
+        </div>
+        <div style="font: 50px 'News Cycle';" class="fragment">
+            a.k.a &ldquo;Side-effects in initialization&rdquo;
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;font: 50px 'News Cycle';line-height:1">
+                <div>
+                    All code that is
+                </div>
+                <ul class="dashed headlines">
+                    <li>
+                        executed during module initialization
+                    </li>
+                    <li>
+                        could potentially have side-effects
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';" class="fragment">
+            will not be removed
+        </div>
+    </section>
+
+    <section data-background-image="img/demo.gif" class="white-on-black">
+        <div style="font: 50px 'News Cycle';">
+            Another
+        </div>
+        <div style="font:150px Milkshake;">
+            Demo
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;">
+                <div style="font: 75px Milkshake">
+                    What are side-effects?
+                </div>
+                <ul class="dashed">
+                    <li>
+                        Modifying a global variable:
+                        <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">String.prototype.myConst = '42'</code></pre>
+                    </li>
+                    <li>
+                        Calling a global function<br>
+                        (because it could have been tampered with):
+                        <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">const keys = Object.keys({x: 1})</code></pre>
+                    </li>
+                    <li>
+                        Implicitly calling a global function:
+                        <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">'4'.concat('2') // = String.prototype.concat.call('4', '2')</code></pre>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;">
+                <div style="font:75px Milkshake;margin-bottom:10px;">What we have now:</div>
+                <h3 style="margin-bottom: 20px;">Node Server Developer</h3>
+                <ul class="dashed no-burn">
+                    <li>No useless stuff in their node_modules</li>
+                </ul>
+                <h3 style="margin-bottom: 20px;margin-top: 60px;">
+                    Node CLI Utility Creator
+                </h3>
+                <ul class="dashed no-burn">
+                    <li>Quick to parse <span style="color:green"
+                            class="fragment"
+                            data-fragment-index="1">&#10004;</span></li>
+                </ul>
+                <h3 style="margin-bottom: 20px;margin-top: 60px;">
+                    Frontend Developer
+                </h3>
+                <ul class="dashed no-burn">
+                    <li><span class="fragment highlight-blue">Runs mostly anywhere&trade;</span>
+                    </li>
+                    <li>
+                        Provides statically analyzable ES6 exports <span style="color:green"
+                            class="fragment"
+                            data-fragment-index="0">&#10004;</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;width: 85%;">
+                <div style="font:60px Milkshake;margin-left:5%;margin-right:5%">
+                    Make it run anywhere
+                </div>
+                <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
+                    package.json:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
+  // ...
+  "devDependencies": {
+    "babel-preset-latest": "*",
+    "rollup": "*",
+    "rollup-plugin-babel": "*"
+  }
+  // ..
+}</code></pre>
+                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                    build.js:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
+  .rollup({
+    entry: 'src/index.js',
+    plugins: [
+      require('rollup-plugin-babel')({
+        presets: [['latest', { es2015: { modules: false } }]]
+      })
+    ]
+  })
+  .then(bundle => {/* ... */})
+</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section data-background-image="img/demo.gif" class="white-on-black">
+        <div style="font:150px Milkshake;">
+            Demo
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;">
+                <div style="font:75px Milkshake;margin-bottom:10px;">What we have now:</div>
+                <h3 style="margin-bottom: 20px;">Node Server Developer</h3>
+                <ul class="dashed no-burn">
+                    <li>
+                        <span class="fragment highlight-blue">No useless stuff in their node_modules</span>
+                    </li>
+                </ul>
+                <h3 style="margin-bottom: 20px;margin-top: 60px;">
+                    Node CLI Utility Creator
+                </h3>
+                <ul class="dashed no-burn">
+                    <li>Quick to parse <span style="color:green">&#10004;</span></li>
+                </ul>
+                <h3 style="margin-bottom: 20px;margin-top: 60px;">
+                    Frontend Developer
+                </h3>
+                <ul class="dashed no-burn">
+                    <li>Runs mostly anywhere&trade;<span style="color:green"
+                            class="fragment"
+                            data-fragment-index="0">&#10004;</span>
+                    </li>
+                    <li>
+                        Provides statically analyzable ES6 exports <span style="color:green">&#10004;</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section data-background-image="img/sure.gif" class="white-on-black">
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            Surely
+        </div>
+        <div style="font: 50px 'News Cycle';">
+            they want all your source and test files in their node_modules folder?
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;width: 90%;">
+                <div style="font:60px Milkshake;margin-left:5%;margin-right:5%">
+                    Or specify what they actually need:
+                </div>
+                <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
+                    package.json:
+                </div>
+                <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
+  // ...
+  "files": ["dist"],
+  // ..
+}</code></pre>
+                <div class="fragment"
+                        data-fragment-index="0"
+                        style="margin-left:5%;margin-top: 50px;">
+                    Only include files from your<span class='inline-code'
+                        style="padding-left: 20px;padding-right: 20px;">"dist"</span>folder
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-background-image="img/wrap-up.gif" class="white-on-black">
+        <div style="font:150px Milkshake;">
+            Wrap up
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;width: 85%;">
+                <div style="font:60px Milkshake;">
+                    Future-proof your library
+                </div>
+                <ul class="dashed headlines">
+                    <li>Write your code with ES6 modules</li>
+                    <li>Use rollup to create two bundles</li>
+                    <li>Distribute them as "main" and "module"</li>
+                    <li>Avoid side-effects in initialization!</li>
+                    <li>Transpile to ES5 via babel<br>(except modules)</li>
+                    <li>Use "files" to specify what to distribute</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <div style="text-align: left;display: inline-block;width: 85%;">
+                <div style="font:60px Milkshake;">
+                    What next? Automate everything!
+                </div>
+                <ul class="dashed headlines">
+                    <li><a href="https://www.npmjs.com/package/husky">husky</a>: Create git hooks</li>
+                    <li><a href="https://www.npmjs.com/package/lint-staged">lint-staged</a>: Execute commands on staged files</li>
+                    <li><a href="https://www.npmjs.com/package/semantic-release">semantic-release</a>: Publish to npm from your CI with automatic versioning</li>
+                    <li><a href="https://greenkeeper.io/">greenkeeper</a>: Automatically test against new dependency versions</li>
+                </ul>
+            </div>
         </div>
     </section>
 
