@@ -4,7 +4,9 @@ rollup
   .rollup({
     entry: 'src/index.js',
     plugins: [
-      require('rollup-plugin-node-resolve')()
+      require('rollup-plugin-babel')({
+        presets: [['latest', {es2015: {modules: false}}]]
+      })
     ]
   })
   .then(bundle => {
