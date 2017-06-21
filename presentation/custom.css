@@ -8,12 +8,12 @@ ul.dashed {
 }
 
 ul.dashed > li {
-    text-indent: -27px;
+    text-indent: -1em;
 }
 
 ul.dashed > li:before {
     content: "– ";
-    text-indent: -27px;
+    text-indent: -1em;
 }
 
 ul.spaced {
@@ -26,22 +26,22 @@ ul.spaced > li {
 
 ul.headlines {
     font: 50px 'News Cycle';
-    line-height:1;
+    line-height: 1;
     list-style-type: none;
 }
 
 ul.headlines > li {
     margin-top: 25px;
-    text-indent: -37px;
+    text-indent: -0.75em;
 }
 
 ul.headlines > li:before {
     content: "– ";
-    text-indent: -37px;
+    text-indent: -0.75em;
 }
 
 span.inline-code {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Fira Mono', monospace;
     font-weight: 900;
 }
 
@@ -53,4 +53,43 @@ span.inline-code {
 .black-on-white {
     color: black;
     text-shadow: 1px 1px 7px white;
+}
+
+table.comparison {
+    margin: 0;
+    line-height: 1.2;
+}
+
+table.comparison td, table.comparison th {
+    padding: 15px 0;
+}
+
+table.comparison td {
+    border: none;
+}
+
+table.comparison td.spaced {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.reveal > .slides section pre > code {
+    font-family: 'Fira Mono', monospace;
+}
+
+.reveal > .slides section pre > code.hljs span.current-fragment {
+    text-shadow: 1px 1px 8px white;
+    font-weight: bold;
+}
+
+.reveal > .slides section pre > code.hljs span.fragment {
+    visibility: hidden;
+    transform: perspective(200px) translateZ(100px);
+    transition: transform 1s
+}
+
+.reveal > .slides section pre > code.hljs span.fragment.visible {
+    visibility: visible;
+    transform: none;
+    display: inline-block;
 }

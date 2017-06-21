@@ -12,17 +12,13 @@
     <meta name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
     <link rel="stylesheet" href="node_modules/tng-reveal-template/style/presentation.css">
     <link rel="stylesheet" href="custom.css">
     <script src="node_modules/tng-reveal-template/src/client/presentation.js"></script>
 </head>
 
 <body class="auto-fragment reveal">
-
-    <div class="i18n">
-        <span class="section-overview">Overview</span>
-    </div>
-
     <section>
         <h3>Building future-proof npm libraries with</h3>
         <h1>rollup.js</h1>
@@ -37,21 +33,14 @@
         <div style="font: 75px Milkshake">
             And so it happened…
         </div>
-        <div class="fragment" data-fragment-index="0" id="show-kermit">
+        <div class="fragment" data-fragment-index="0">
             <div style="font: 50px 'News Cycle';">
                 …you have written a
             </div>
-            <div class="fragment fade-in"
-                    data-fragment-index="1"
-                    style="margin-top:-70px;font: 130px 'News Cycle';">
+            <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
                 great<span class="fragment fade-in"
                     data-fragment-index="2"
-                    style="vertical-align: super">*</span>
-            </div>
-            <div class="fragment fade-out"
-                    data-fragment-index="1"
-                    style="margin-top:-160px;margin-bottom: 40px;font: 80px 'News Cycle';">
-                good
+                    style="position: relative;top:-35px;">*</span>
             </div>
             <div style="font: 50px 'News Cycle';">
                 npm library.
@@ -60,6 +49,7 @@
         <div style="margin-top: 50px;" class="fragment" data-fragment-index="2">
             *Check out
         </div>
+        <div style="display: none" class="fragment" data-fragment-index="1" id="show-kermit"></div>
         <a href="https://www.youtube.com/watch?v=RdKT70ktaeo"
                 class="fragment"
                 data-fragment-index="2"
@@ -119,16 +109,14 @@
         <div style="font: 75px Milkshake">
             The question is:
         </div>
-        <div style="font: 50px 'News Cycle';" class="fragment" data-fragment-index="0">
+        <div style="font: 50px 'News Cycle';">
             How can you make your library
         </div>
-        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';"
-                class="fragment"
-                data-fragment-index="0">
-            work
+        <div style="margin-top:-20px;margin-bottom:10px;font: 130px 'News Cycle';">
+            work well
         </div>
-        <div style="font: 50px 'News Cycle';" class="fragment" data-fragment-index="0">
-            well for all these users?
+        <div style="font: 50px 'News Cycle';">
+            for all these users?
         </div>
     </section>
 
@@ -140,21 +128,21 @@
                     Node Server Developer
                 </h3>
                 <ul class="dashed">
-                    <li>No useless stuff in their node_modules</li>
+                    <li>No useless stuff in node_modules</li>
                 </ul>
                 <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">
                     Node CLI Utility Creator
                 </h3>
                 <ul class="dashed">
-                    <li>Quick to parse</li>
+                    <li>Quickly parsed code</li>
                 </ul>
                 <h3 class="fragment no-burn" style="margin-bottom: 20px;margin-top: 60px;">
                     Frontend Developer
                 </h3>
                 <ul class="dashed">
-                    <li>Runs mostly anywhere&trade;</li>
+                    <li>Code that runs everywhere&trade;</li>
                     <li>
-                        <span class="fragment highlight-blue">Provides statically analyzable ES6 exports</span>
+                        <span class="fragment highlight-blue">Statically analyzable ES6 exports</span>
                     </li>
                 </ul>
             </div>
@@ -176,34 +164,49 @@
     <section>
         <div>
             <div style="text-align: left;display: inline-block;">
-                <h3 style="margin-bottom:-10px">
+                <h3 style="margin-bottom:30px">
                     ES6 modules<br>
                     from a user's perspective
                 </h3>
-                <ul class="dashed spaced">
-                    <li>
-                        <span class='inline-code' style="padding-right: 20px;">export const x = 'foo'</span>
-                        instead of<br>
-                        <span class='inline-code'>exports.x = 'foo'</span>
-                    </li>
-                    <li>
-                        <span class='inline-code'
-                                style="padding-right: 20px;">import {x} from 'y'</span>
-                        instead of<br>
-                        <span class='inline-code'>x = require('y').x</span>
-                    </li>
-                    <li>
-                        <span class='inline-code' style="padding-right: 10px;">import</span>
-                        and
-                        <span class='inline-code' style="padding-left: 10px;padding-right: 10px;">export</span>
-                        only allowed at the top level
-                    </li>
-                    <li>
-                        <span class='inline-code'
+                <table class="comparison">
+                    <tr class="fragment" data-fragment-index="0">
+                        <th>CommonJS</th>
+                        <th></th>
+                        <th>ES6</th>
+                    </tr>
+                    <tr class="fragment" data-fragment-index="0">
+                        <td><span class='inline-code'>exports.x = 'foo'</span></td>
+                        <td class="spaced">=></td>
+                        <td><span class='inline-code'>export const x = 'foo'</span></td>
+                    </tr>
+                    <tr class="fragment" data-fragment-index="1">
+                        <td><span class='inline-code'>x = require('y').x</span></td>
+                        <td class="spaced">=></td>
+                        <td><span class='inline-code'>import {x} from 'y'</span></td>
+                    </tr>
+                    <tr class="fragment" data-fragment-index="2">
+                        <td><span class='inline-code'>require</span><br>
+                            can be used anywhere
+                        </td>
+                        <td class="spaced">=></td>
+                        <td><span class='inline-code' style="padding-right: 10px;">import</span> and
+                            <span class='inline-code'
+                                    style="padding-left: 10px;padding-right: 10px;">export</span><br>
+                            only allowed at the top level
+                        </td>
+                    </tr>
+                    <tr class="fragment" data-fragment-index="3">
+                        <td><span class='inline-code'>require(…)</span> permits<br>
+                            dynamic module names
+                        </td>
+                        <td class="spaced">=></td>
+                        <td><span class='inline-code'
                                 style="padding-right: 10px;">import ... from</span>
-                        does not allow dynamic module names
-                    </li>
-                </ul>
+                            enforces<br>
+                            explicit module names
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </section>
@@ -255,7 +258,7 @@
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
   // ...
   "main": "dist/index.js", // CommonJS version
-  "module": "dist/index.mjs", // ES6 version
+  ^1^"module": "dist/index.mjs", // ES6 version^^
   // ..
 }</code></pre>
                 <div class="fragment" style="margin-left:5%;margin-top: 50px;">
@@ -280,15 +283,20 @@
     </section>
 
     <section>
-        <img src="img/rollup.svg"
-                style="width: 300px;box-shadow: none;margin:-50px;vertical-align: middle">
-        <span style="font: 130px 'News Cycle';vertical-align: middle">rollup.js</span>
-        <ul class="headlines">
-            <li>Bundles ES6 modules into a single file</li>
-            <li>Supports various output formats: ES6,<br>CommonJS, AMD, global variable…</li>
-            <li>Optimizes output via<br><span style="font-weight: 900;margin-right:10px;">scope-hoisting</span>
-                and <span style="font-weight:900;margin-left:10px;">tree-shaking</span></li>
-        </ul>
+        <div>
+            <div style="text-align: left;display: inline-block;width: 80%;">
+                <img src="img/rollup.svg"
+                        style="width: 300px;box-shadow: none;margin:-75px;padding-right:30px;vertical-align: middle">
+                <span style="font: 130px 'News Cycle';vertical-align: middle">rollup.js</span>
+                <ul class="headlines">
+                    <li>Bundles ES6 modules into a single file</li>
+                    <li>Supports various output formats: ES6,<br>CommonJS, AMD, global variable…
+                    </li>
+                    <li>Optimizes output via<br><span style="font-weight: 900;margin-right:10px;">scope-hoisting</span>
+                        and <span style="font-weight:900;margin-left:10px;">tree-shaking</span></li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section>
@@ -301,22 +309,22 @@
                     build.js:
                 </div>
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="javascript">require('rollup')
-  .rollup({entry: 'src/index.js'})
-  .then(bundle => {
+  ^1^.rollup({entry: 'src/index.js'})^^
+  ^2^.then(bundle => {
     bundle.write({
       dest: 'dist/index.js',
       format: 'cjs' // CommonJS module
-    })
-    bundle.write({
+    })^^
+    ^3^bundle.write({
       dest: 'dist/index.mjs',
       format: 'es' // ES6 module
-    })
-  })
+    })^^
+  ^2^})^^
 </code></pre>
-                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                <div class="fragment no-burn" data-fragment-index="4" style="margin-left: 5%">
                     Then create the bundles with
                 </div>
-                <pre class="fragment no-burn" data-fragment-index="1"><code class="bash">$ node build.js</code></pre>
+                <pre class="fragment no-burn" data-fragment-index="4"><code class="bash">$ node build.js</code></pre>
             </div>
         </div>
     </section>
@@ -346,8 +354,8 @@
                 </div>
                 <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
   .rollup({
-    entry: 'src/index.js',
-    external: ['lodash']
+    entry: 'src/index.js'^2^,^^
+    ^2^external: ['lodash']^^
   })
   .then(bundle => {/* ... */})
 </code></pre>
@@ -360,7 +368,7 @@
 
     <section>
         <div>
-            <div style="text-align: left;display: inline-block;width: 60%;">
+            <div style="text-align: left;display: inline-block;width: 70%;">
                 <div style="font:60px Milkshake;margin-left:5%;margin-right:5%">
                     Bundled dependencies
                 </div>
@@ -381,10 +389,10 @@
                 </div>
                 <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
   .rollup({
-    entry: 'src/index.js',
-    plugins: [
-      require('rollup-plugin-node-resolve')()
-    ]
+    entry: 'src/index.js'^2^,^^
+    ^2^plugins: [
+  require('rollup-plugin-node-resolve')()
+]^^
   })
   .then(bundle => {/* ... */})
 </code></pre>
@@ -478,6 +486,9 @@
                         <pre style="text-indent:0;margin-left:0;width:100%;"><code class="javascript">'4'.concat('2') // = String.prototype.concat.call('4', '2')</code></pre>
                     </li>
                 </ul>
+                <div class="fragment" style="margin-top: 30px;">
+                    Rule of thumb: Do not execute code upon initialization!
+                </div>
             </div>
         </div>
     </section>
@@ -488,24 +499,26 @@
                 <div style="font:75px Milkshake;margin-bottom:10px;">What we have now:</div>
                 <h3 style="margin-bottom: 20px;">Node Server Developer</h3>
                 <ul class="dashed no-burn">
-                    <li>No useless stuff in their node_modules</li>
+                    <li>No useless stuff in node_modules</li>
                 </ul>
                 <h3 style="margin-bottom: 20px;margin-top: 60px;">
                     Node CLI Utility Creator
                 </h3>
                 <ul class="dashed no-burn">
-                    <li>Quick to parse <span style="color:green"
-                            class="fragment"
-                            data-fragment-index="1">&#10004;</span></li>
+                    <li>Quickly parsed code
+                        <span style="color:green"
+                                class="fragment"
+                                data-fragment-index="1">&#10004;</span></li>
                 </ul>
                 <h3 style="margin-bottom: 20px;margin-top: 60px;">
                     Frontend Developer
                 </h3>
                 <ul class="dashed no-burn">
-                    <li><span class="fragment highlight-blue">Runs mostly anywhere&trade;</span>
+                    <li>
+                        <span class="fragment highlight-blue">Code that runs everywhere&trade;</span>
                     </li>
                     <li>
-                        Provides statically analyzable ES6 exports <span style="color:green"
+                        Statically analyzable ES6 exports <span style="color:green"
                             class="fragment"
                             data-fragment-index="0">&#10004;</span>
                     </li>
@@ -518,7 +531,7 @@
         <div>
             <div style="text-align: left;display: inline-block;width: 85%;">
                 <div style="font:60px Milkshake;margin-left:5%;margin-right:5%">
-                    Make it run anywhere
+                    Make it run everywhere:
                 </div>
                 <div class="fragment no-burn" data-fragment-index="0" style="margin-left: 5%">
                     package.json:
@@ -539,9 +552,9 @@
   .rollup({
     entry: 'src/index.js',
     plugins: [
-      require('rollup-plugin-babel')({
-        presets: [['latest', { es2015: { modules: false } }]]
-      })
+      ^2^require('rollup-plugin-babel')({
+  presets: [['latest', { es2015: { modules: false } }]]
+})^^
     ]
   })
   .then(bundle => {/* ... */})
@@ -563,25 +576,26 @@
                 <h3 style="margin-bottom: 20px;">Node Server Developer</h3>
                 <ul class="dashed no-burn">
                     <li>
-                        <span class="fragment highlight-blue">No useless stuff in their node_modules</span>
+                        <span class="fragment highlight-blue">No useless stuff in node_modules</span>
                     </li>
                 </ul>
                 <h3 style="margin-bottom: 20px;margin-top: 60px;">
                     Node CLI Utility Creator
                 </h3>
                 <ul class="dashed no-burn">
-                    <li>Quick to parse <span style="color:green">&#10004;</span></li>
+                    <li>Quickly parsed code <span style="color:green">&#10004;</span></li>
                 </ul>
                 <h3 style="margin-bottom: 20px;margin-top: 60px;">
                     Frontend Developer
                 </h3>
                 <ul class="dashed no-burn">
-                    <li>Runs mostly anywhere&trade;<span style="color:green"
-                            class="fragment"
-                            data-fragment-index="0">&#10004;</span>
+                    <li>Code that runs everywhere&trade;
+                        <span style="color:green"
+                                class="fragment"
+                                data-fragment-index="0">&#10004;</span>
                     </li>
                     <li>
-                        Provides statically analyzable ES6 exports <span style="color:green">&#10004;</span>
+                        Statically analyzable ES6 exports <span style="color:green">&#10004;</span>
                     </li>
                 </ul>
             </div>
@@ -630,15 +644,15 @@
     <section>
         <div>
             <div style="text-align: left;display: inline-block;width: 85%;">
-                <div style="font:60px Milkshake;">
-                    Future-proof your library
+                <div style="font:60px Milkshake;margin-bottom: -20px">
+                    How to future-proof your library:
                 </div>
                 <ul class="dashed headlines">
                     <li>Write your code with ES6 modules</li>
                     <li>Use rollup to create two bundles</li>
                     <li>Distribute them as "main" and "module"</li>
                     <li>Avoid side-effects in initialization!</li>
-                    <li>Transpile to ES5 via babel<br>(except modules)</li>
+                    <li>Transpile to ES5 via babel<br>(except import/export statements!)</li>
                     <li>Use "files" to specify what to distribute</li>
                 </ul>
             </div>
@@ -648,19 +662,28 @@
     <section>
         <div>
             <div style="text-align: left;display: inline-block;width: 85%;">
-                <div style="font:60px Milkshake;">
-                    What next? Automate everything!
+                <div style="font:60px Milkshake;margin-bottom: -20px;">
+                    What next? <span class="fragment">Automate everything!</span>
                 </div>
                 <ul class="dashed headlines">
-                    <li><a href="https://www.npmjs.com/package/husky">husky</a>: Create git hooks</li>
-                    <li><a href="https://www.npmjs.com/package/lint-staged">lint-staged</a>: Execute commands on staged files</li>
-                    <li><a href="https://www.npmjs.com/package/semantic-release">semantic-release</a>: Publish to npm from your CI with automatic versioning</li>
-                    <li><a href="https://greenkeeper.io/">greenkeeper</a>: Automatically test against new dependency versions</li>
+                    <li><a href="https://www.npmjs.com/package/husky">husky</a>: Manage git hooks
+                    </li>
+                    <li><a href="https://www.npmjs.com/package/lint-staged">lint-staged</a>: Execute
+                        commands on staged files
+                    </li>
+                    <li>
+                        <a href="https://www.npmjs.com/package/semantic-release">semantic-release</a>:
+                        Publish to npm from your CI with automatic versioning
+                    </li>
+                    <li><a href="https://greenkeeper.io/">greenkeeper</a>: Automatically test
+                        against new dependency versions
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
 
+    <!--TODO QR tag-->
     <section>
         <h1>Thank you</h1>
 
