@@ -346,16 +346,16 @@
                 </div>
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
   // ...
-  "dependencies": {"lodash": "*"}
+  "dependencies": {^1^"lodash": "*"^^}
   // ..
 }</code></pre>
-                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                <div class="fragment no-burn" data-fragment-index="2" style="margin-left: 5%">
                     build.js:
                 </div>
-                <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
+                <pre class="fragment no-burn" data-fragment-index="2"><code class="javascript">require('rollup')
   .rollup({
-    entry: 'src/index.js'^2^,^^
-^2^    external: ['lodash']^^
+    entry: 'src/index.js'^3^,^^
+^3^    external: ['lodash']^^
   })
   .then(bundle => {/* ... */})
 </code></pre>
@@ -378,19 +378,19 @@
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
   // ...
   "devDependencies": {
-    "lodash-es": "*",
-    "rollup": "*",
-    "rollup-plugin-node-resolve": "*"
+^1^    "lodash-es": "*",^^
+    "rollup": "*"^1^,^^
+^1^    "rollup-plugin-node-resolve": "*"^^
   }
   // ..
 }</code></pre>
-                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                <div class="fragment no-burn" data-fragment-index="2" style="margin-left: 5%">
                     build.js:
                 </div>
-                <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
+                <pre class="fragment no-burn" data-fragment-index="2"><code class="javascript">require('rollup')
   .rollup({
-    entry: 'src/index.js'^2^,^^
-^2^    plugins: [
+    entry: 'src/index.js'^3^,^^
+^3^    plugins: [
       require('rollup-plugin-node-resolve')()
     ]^^
   })
@@ -539,20 +539,20 @@
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
   // ...
   "devDependencies": {
-    "babel-preset-latest": "*",
-    "rollup": "*",
-    "rollup-plugin-babel": "*"
+^1^    "babel-preset-latest": "*",^^
+    "rollup": "*"^1^,^^
+^1^    "rollup-plugin-babel": "*"^^
   }
   // ..
 }</code></pre>
-                <div class="fragment no-burn" data-fragment-index="1" style="margin-left: 5%">
+                <div class="fragment no-burn" data-fragment-index="2" style="margin-left: 5%">
                     build.js:
                 </div>
-                <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
+                <pre class="fragment no-burn" data-fragment-index="2"><code class="javascript">require('rollup')
   .rollup({
     entry: 'src/index.js',
     plugins: [
-^2^      require('rollup-plugin-babel')({
+^3^      require('rollup-plugin-babel')({
         presets: [['latest', { es2015: { modules: false } }]]
       })^^
     ]
