@@ -75,6 +75,7 @@ table.comparison td.spaced {
 
 .reveal > .slides section pre > code {
     font-family: 'Fira Mono', monospace;
+    overflow: hidden;
 }
 
 .reveal > .slides section pre > code.hljs span.current-fragment {
@@ -83,13 +84,13 @@ table.comparison td.spaced {
 }
 
 .reveal > .slides section pre > code.hljs span.fragment {
-    visibility: hidden;
+    opacity: 0;
     transform: perspective(200px) translateZ(100px);
-    transition: transform 1s
+    transition: transform ease-out 0.4s, opacity ease-out 0.4s
 }
 
 .reveal > .slides section pre > code.hljs span.fragment.visible {
-    visibility: visible;
+    opacity: 1;
     transform: none;
     display: inline-block;
 }

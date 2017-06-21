@@ -201,7 +201,7 @@
                         </td>
                         <td class="spaced">=></td>
                         <td><span class='inline-code'
-                                style="padding-right: 10px;">import ... from</span>
+                                style="padding-right: 10px;">import … from</span>
                             enforces<br>
                             explicit module names
                         </td>
@@ -258,7 +258,7 @@
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="json">{
   // ...
   "main": "dist/index.js", // CommonJS version
-  ^1^"module": "dist/index.mjs", // ES6 version^^
+^1^  "module": "dist/index.mjs", // ES6 version^^
   // ..
 }</code></pre>
                 <div class="fragment" style="margin-left:5%;margin-top: 50px;">
@@ -309,17 +309,17 @@
                     build.js:
                 </div>
                 <pre class="fragment no-burn" data-fragment-index="0"><code class="javascript">require('rollup')
-  ^1^.rollup({entry: 'src/index.js'})^^
-  ^2^.then(bundle => {
+^1^  .rollup({entry: 'src/index.js'})^^
+^2^  .then(bundle => {
     bundle.write({
       dest: 'dist/index.js',
       format: 'cjs' // CommonJS module
     })^^
-    ^3^bundle.write({
+^3^    bundle.write({
       dest: 'dist/index.mjs',
       format: 'es' // ES6 module
     })^^
-  ^2^})^^
+^2^  })^^
 </code></pre>
                 <div class="fragment no-burn" data-fragment-index="4" style="margin-left: 5%">
                     Then create the bundles with
@@ -355,7 +355,7 @@
                 <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
   .rollup({
     entry: 'src/index.js'^2^,^^
-    ^2^external: ['lodash']^^
+^2^    external: ['lodash']^^
   })
   .then(bundle => {/* ... */})
 </code></pre>
@@ -390,9 +390,9 @@
                 <pre class="fragment no-burn" data-fragment-index="1"><code class="javascript">require('rollup')
   .rollup({
     entry: 'src/index.js'^2^,^^
-    ^2^plugins: [
-  require('rollup-plugin-node-resolve')()
-]^^
+^2^    plugins: [
+      require('rollup-plugin-node-resolve')()
+    ]^^
   })
   .then(bundle => {/* ... */})
 </code></pre>
@@ -552,9 +552,9 @@
   .rollup({
     entry: 'src/index.js',
     plugins: [
-      ^2^require('rollup-plugin-babel')({
-  presets: [['latest', { es2015: { modules: false } }]]
-})^^
+^2^      require('rollup-plugin-babel')({
+        presets: [['latest', { es2015: { modules: false } }]]
+      })^^
     ]
   })
   .then(bundle => {/* ... */})

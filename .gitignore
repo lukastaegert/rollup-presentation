@@ -1,6 +1,5 @@
 .DS_Store
 .idea
 npm-debug.log
-demo/dist
-demo/package-lock.json
+dist
 node_modules
