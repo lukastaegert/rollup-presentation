@@ -1,7 +1,7 @@
 {
   "name": "make-upper",
-  "version": "1.0.0",
-  "description": "Converting first letters to upper case since 2017",
+  "version": "1.0.2",
+  "description": "Converting first letters to upper case with lodash-es",
   "author": "Lukas Taegert",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
